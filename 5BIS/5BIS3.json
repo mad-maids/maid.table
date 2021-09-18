@@ -2,28 +2,28 @@
     "0": [],
     "1": [
         {
-            "name": "Introduction to Statistics and Data Science",
-            "tutor": "Olmas Isakov",
-            "type": "workshop",
-            "start": 9.0,
-            "length": 2.0,
-            "location": "ATB214 CL"
-        },
-        {
-            "name": "Tourism and Its Dynamics",
-            "tutor": "Imran Safarov",
+            "name": "Game Development",
+            "tutor": "Akmal Salikov",
             "type": "seminar",
-            "start": 11.0,
+            "start": 12.0,
             "length": 2.0,
-            "location": "ATB311"
+            "location": "IB215 (20) CL"
         },
         {
-            "name": "Fundamentals of Programming",
-            "tutor": "Vasiliy Kuznetsov",
+            "name": "Mobile Application Development",
+            "tutor": "Said Abduvaliev",
+            "type": "seminar",
+            "start": 14.0,
+            "length": 2.0,
+            "location": "New408 CL"
+        },
+        {
+            "name": "Political Economy",
+            "tutor": "Vincenzo Alfano",
             "type": "lecture",
-            "start": 17.0,
+            "start": 16.0,
             "length": 1.0,
-            "location": "New501 H"
+            "location": "IB316 (50)"
         }
     ],
     "2": [
