@@ -1,0 +1,16 @@
+{
+  "name": "maid.table",
+  "version": "1.0.0",
+  "description": "Timetable for Mad Maid's Management Systems",
+  "repository": "https://github.com/mad-maids/maid.table.git",
+  "author": "Mad Maids (https://maid.uz)",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "prettier": "^2.4.1"
+  },
+  "scripts": {
+    "format": "yarn format:check --write",
+    "format:check": "prettier --check \"**/**/*.json\""
+  }
+}
