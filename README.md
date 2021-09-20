@@ -1,6 +1,9 @@
 <h2 align="center">Mad Maids Table</h2>
 
-<p align="center"><img src="https://img.shields.io/static/v1.svg?style=flat-square&label=maid.hub&message=synced&logoColor=eceff4&logo=github&colorA=000000&colorB=ffffff"/> <img src="https://img.shields.io/static/v1.svg?style=flat-square&label=maid.ts&message=synced&logoColor=eceff4&logo=github&colorA=000000&colorB=ffffff"/></p>
+<p align="center">
+<a href="https://github.com/mad-maids/maid.hub"><img src="https://img.shields.io/static/v1.svg?style=flat-square&label=maid.hub&message=synced&logoColor=eceff4&logo=github&colorA=000000&colorB=ffffff"/></a>
+<a href="https://github.com/mad-maids/maid.ts"><img src="https://img.shields.io/static/v1.svg?style=flat-square&label=maid.ts&message=synced&logoColor=eceff4&logo=github&colorA=000000&colorB=ffffff"/></a>
+</p>
 
 **This project serves as a timetable database for Mad Maids projects. Editing this repository changes the database to all repositories.**
 
