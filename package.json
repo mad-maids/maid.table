@@ -11,6 +11,6 @@
   },
   "scripts": {
     "format": "yarn format:check --write",
-    "format:check": "prettier --check \"**/**/*.json\""
+    "format:check": "prettier --check \"**/**/*.json\" \"**/**/*.md\""
   }
 }
