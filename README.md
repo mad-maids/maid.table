@@ -7,6 +7,22 @@
 
 **This project serves as a timetable database for Mad Maids projects. Editing this repository changes the database to all repositories.**
 
+## For Timetable Editors
+
+Keep in mind that a single mistake may break all our applications. So, in order to avoid this, we added a formatter to our project.
+In order to format and fix mistakes, make sure you have `Node.js` and `Yarn` installed on your computer. Then, run these commands below:
+
+```shell
+# Install all required dependencies
+yarn install
+
+# Start formatting
+yarn format
+
+# (Optional) If you would like to check for format issues
+yarn format:check
+```
+
 ---
 
 > The project is being actively edited in order to keep the latest information, if you found our information outdated, please 
