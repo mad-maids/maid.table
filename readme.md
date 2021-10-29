@@ -48,7 +48,7 @@ python3 get_jsons.py
 ```
 
 Once the script finishes running, run the prettier formatter (more info on that
-above under the **For Timetable Editors** heading).
+above, under the **For Timetable Editors** heading).
 
 ---
 
