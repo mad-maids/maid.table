@@ -26,6 +26,25 @@ yarn format
 yarn format:check
 ```
 
+### Extra Notes
+
+If you'd like to use the `get_jsons.py` script to update the `.json` files,
+first make sure that you have `Python` and
+[`ChromeDriver`](https://sites.google.com/chromium.org/driver/downloads?authuser=0)
+installed on your computer. Then, create and activate a virtual environment and
+install the required packages with the following command:
+
+```shell
+python3 -m pip install -r requirements.txt
+```
+
+Finally, change the variables in the `.env.example` file and rename it to
+`.env`. Run the script with the following command:
+
+```shell
+python3 get_jsons.py
+```
+
 ---
 
 > The project is being actively edited in order to keep the latest information,
