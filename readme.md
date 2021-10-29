@@ -31,8 +31,10 @@ yarn format:check
 If you'd like to use the `get_jsons.py` script to update the `.json` files,
 first make sure that you have `Python` and
 [`ChromeDriver`](https://sites.google.com/chromium.org/driver/downloads?authuser=0)
-installed on your computer. Then, create and activate a virtual environment and
-install the required packages with the following command:
+installed on your computer (if you are using Windows, make sure to move the
+`chromedriver.exe` to the working directory). Then, create and activate a
+virtual environment and install the required packages with the following
+command:
 
 ```shell
 python3 -m pip install -r requirements.txt
@@ -44,6 +46,9 @@ Finally, change the variables in the `.env.example` file and rename it to
 ```shell
 python3 get_jsons.py
 ```
+
+Once the script finishes running, run the prettier formatter (more info on that
+above under the **For Timetable Editors** heading).
 
 ---
 
