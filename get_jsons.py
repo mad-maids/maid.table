@@ -133,6 +133,11 @@ for group in all_groups[2:]:
 
             name = name.split("_")[0]
 
+            # i hate to make this code even more loaded, but one module name is
+            # incomplete on intranet timetable page
+            if name.endswith("Beha"):
+                name += "viour"
+
             day = str((index // 11) + 1)
             class_time = 9.0 + (index % 11)
 
