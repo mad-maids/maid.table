@@ -37,7 +37,7 @@ USER_ID = env.str("USER_ID")
 PASSWORD = env.str("PASSWORD")
 
 # create an instance of and launch chrome webdriver
-browser = webdriver.Chrome(chrome_options=chrome_options)
+browser = webdriver.Chrome(options=chrome_options)
 
 # make a GET request to intranet timetable
 browser.get("https://intranet.wiut.uz/TimeTableNew/GetLessons")
