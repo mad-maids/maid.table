@@ -16,8 +16,8 @@ jobs:
         with:
           python-version: 3.9
         env:
-          USER_ID: ${{ secret.STUDENT_ID }}
-          PASSWORD: ${{ secret.STUDENT_PASSWORD}}
+          USER_ID: ${{ secrets.STUDENT_ID }}
+          PASSWORD: ${{ secrets.STUDENT_PASSWORD}}
       - name: Install dependencies
         run: |
           # Installing ChromeDriver
