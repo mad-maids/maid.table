@@ -14,9 +14,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: nanasess/setup-chromedriver@master
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 14
       - name: Set up Python 3.9
         uses: actions/setup-python@v2
         with:
@@ -37,6 +34,9 @@ jobs:
           git commit -m "Updated timetable"
           git push origin main --force
       - name: Formatting everything
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 14
       - run: yarn format
         
           
