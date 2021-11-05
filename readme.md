@@ -3,9 +3,8 @@
 <p align="center">
 <a href="https://github.com/mad-maids/maid.hub"><img src="https://img.shields.io/static/v1.svg?style=flat-square&label=maid.hub&message=synced&logoColor=eceff4&logo=github&colorA=000000&colorB=ffffff"/></a>
 <a href="https://github.com/mad-maids/maid.ts"><img src="https://img.shields.io/static/v1.svg?style=flat-square&label=maid.ts&message=synced&logoColor=eceff4&logo=github&colorA=000000&colorB=ffffff"/></a>
+<a href="https://github.com/mad-maids/maid.table/actions/workflows/build.yml"><img src="https://github.com/mad-maids/maid.table/actions/workflows/build.yml/badge.svg?branch=main"/></a>
 </p>
-
-[![Python Build](https://github.com/mad-maids/maid.table/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/mad-maids/maid.table/actions/workflows/build.yml)
 
 **This project serves as a timetable database for Mad Maids projects. Editing
 this repository changes the database to all repositories.**
