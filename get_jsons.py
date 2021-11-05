@@ -18,6 +18,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select, WebDriverWait
 from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.chrome.options import Options
 
 
 logging.basicConfig(level=logging.INFO, format="#%(levelname)-8s %(message)s")
@@ -25,12 +26,18 @@ logging.basicConfig(level=logging.INFO, format="#%(levelname)-8s %(message)s")
 env = Env()
 env.read_env()
 
+# Workflow is failing if the browser window is not maximized.
+chrome_options = Options()
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--disable-dev-shm-usage')
+
 # these are saved in the .env file
 USER_ID = env.str("USER_ID")
 PASSWORD = env.str("PASSWORD")
 
 # create an instance of and launch chrome webdriver
-browser = webdriver.Chrome()
+browser = webdriver.Chrome(chrome_options=chrome_options)
 
 # make a GET request to intranet timetable
 browser.get("https://intranet.wiut.uz/TimeTableNew/GetLessons")
