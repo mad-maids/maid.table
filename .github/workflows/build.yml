@@ -1,30 +1,42 @@
 name: Python Build
 
-on: [push]
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
 
 jobs:
   test:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: [3.8, 3.9]
     steps:
       - uses: actions/checkout@v2
-      - name: Set up Python ${{ matrix.python-version }}
+      - name: Set up Python 3.9
         uses: actions/setup-python@v2
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: 3.9
+        env:
+          USER_ID: ${{ secret.STUDENT_ID }}
+          PASSWORD: ${{ secret.STUDENT_PASSWORD}}
       - name: Install dependencies
         run: |
+          # Installing ChromeDriver
+          sudo apt update
+          sudo apt install -y unzip xvfb libxi6 libgconf-2-4 
+          sudo apt install default-jdk 
+          sudo curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add 
+          sudo bash -c "echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' >> /etc/apt/sources.list.d/google-chrome.list" 
+          sudo apt -y update 
+          sudo apt -y install google-chrome-stable 
+          wget https://chromedriver.storage.googleapis.com/94.0.4606.61/chromedriver_linux64.zip 
+          unzip chromedriver_linux64.zip 
+          sudo mv chromedriver /usr/bin/chromedriver 
+          sudo chown root:root /usr/bin/chromedriver 
+          sudo chmod +x /usr/bin/chromedriver 
+          # Installing Python Pip Dependencies
           python -m pip install --upgrade pip
           pip install flake8 pytest
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Lint with flake8
         run: |
           # stop the build if there are Python syntax errors or undefined names
-          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-          # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-      - name: Test with pytest
-        run: |
-          pytest
+          python get_jsons.py
