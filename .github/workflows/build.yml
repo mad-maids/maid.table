@@ -14,11 +14,7 @@ jobs:
         PASSWORD: ${{ secrets.STUDENT_PASSWORD}}
     steps:
       - uses: actions/checkout@v2
-      # - uses: browser-actions/setup-chrome@latest
       - uses: nanasess/setup-chromedriver@master
-        with:
-          # Optional: do not specify to match Chrome's version
-          chromedriver-version: '88.0.4324.96'
       - name: Set up Python 3.9
         uses: actions/setup-python@v2
         with:
@@ -31,6 +27,5 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Running Get Json
         run: |
-          google-chrome --version
           # stop the build if there are Python syntax errors or undefined names
           python get_jsons.py
