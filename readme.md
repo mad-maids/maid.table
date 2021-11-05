@@ -47,8 +47,12 @@ Finally, change the variables in the `.env.example` file and rename it to
 python3 get_jsons.py
 ```
 
-Once the script finishes running, run the prettier formatter (more info on that
-above, under the **For Timetable Editors** heading).
+Once the script finishes running, test the output `.json` files by running this
+command:
+
+```shell
+pytest -q test_jsons.py
+```
 
 ---
 
