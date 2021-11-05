@@ -11,6 +11,7 @@ import subprocess
 from testing_funcs.enough_objects import enough_objects
 from testing_funcs.check_module import check_module
 from testing_funcs.verify_tutor import verify_tutor
+from testing_funcs.check_type import check_type
 from testing_funcs.check_time import check_time
 
 # running prettier formatter prior to doing anything else
@@ -46,6 +47,13 @@ class TestClass:
                 data = json.load(file)
                 result = verify_tutor(data)
                 assert result == True, f"Name is not upper case: {result}"
+
+    def test_lesson_type(self):
+        for file_path in file_paths:
+            with open(file_path) as file:
+                data = json.load(file)
+                result = check_type(data)
+                assert result == True, f"Lesson types {result} don't exist"
 
     def test_start_time(self):
         for file_path in file_paths:
