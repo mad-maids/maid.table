@@ -1,9 +1,9 @@
-name: Python Runner
+name: Python Build
 
 on: [push]
 
 jobs:
-  py:
+  test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
