@@ -1,3 +1,9 @@
+"""
+This is the script to run all the tests.
+Starts by running the Prettier formatter.
+Checks all the .json files.
+"""
+
 import json
 import os
 import subprocess
