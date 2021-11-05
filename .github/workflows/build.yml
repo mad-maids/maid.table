@@ -30,13 +30,14 @@ jobs:
         run: |
           # stop the build if there are Python syntax errors or undefined names
           python get_jsons.py
+      - name: Formatting everything
+        run: yarn format
+      - name: Uploading all changes to GIT
+        run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add .
           [[ -z $(git status -uno --porcelain) ]] && echo "No updates detected, no need for push" && exit 0;
           git commit -m "Updated timetable"
           git push origin main --force
-      - name: Formatting everything
-        run: yarn format
-        
           
