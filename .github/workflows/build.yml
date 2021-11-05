@@ -31,8 +31,9 @@ jobs:
           # stop the build if there are Python syntax errors or undefined names
           python get_jsons.py
       - name: Formatting everything
-        run: yarn install
-        run: yarn format
+        run: |
+          yarn install
+          yarn format
       - name: Uploading all changes to GIT
         run: |
           git config user.name github-actions
