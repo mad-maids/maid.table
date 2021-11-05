@@ -63,11 +63,6 @@ all_groups = [option.text for option in select.options]
 
 # the first 2 elements in all_groups array are an empty blank and '1 time'
 for group in all_groups[2:]:
-    # the goal is to cover all undergrad students and all their groups start
-    # with a number (e.g. 5BIS1)
-    if not group[0].isnumeric():
-        continue
-
     # undergrad ends here i guess (also their time entries are a bit different)
     if group == "7MScBIA1":
         break
@@ -106,7 +101,7 @@ for group in all_groups[2:]:
             tutor = class_details[-1]
             name = class_details[-2]
 
-            if "online" in name:
+            if "online" in name.lower():
                 name = name.split(" / ")[-1]
                 class_type = "online"
             elif "lec" in name:
