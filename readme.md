@@ -9,6 +9,8 @@
 <a href="https://github.com/mad-maids/maid.table/actions/workflows/build.yml"><img src="https://github.com/mad-maids/maid.table/actions/workflows/build.yml/badge.svg?branch=main"/></a>
 </p>
 
+**Big thanks to [Durbek Kamolov](https://github.com/DurbeKK) for creating automations and contributing to Mad Maids. This project came true thanks for its contributors participated on our projects...**
+
 **This project serves as a timetable database for Mad Maids projects. Editing
 this repository changes the database to all repositories.**
 
