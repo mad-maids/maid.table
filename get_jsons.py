@@ -1,6 +1,6 @@
 """
 Scrapes the intranet timetable page. Gets all the lessons data for undergrad, 
-saves it in .json format in the data folder.
+saves it in .json format in the data folder. test
 """
 
 import json
