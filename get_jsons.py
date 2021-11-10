@@ -66,7 +66,7 @@ select = Select(
 )
 
 # this is just a list of all group names
-all_groups = [option.text for option in select.options]
+all_groups = [option.text.upper() for option in select.options]
 
 # the first 2 elements in all_groups array are an empty blank and '1 time'
 for group in all_groups[2:]:
