@@ -113,3 +113,9 @@ dist
 __pycache__/
 *.py[cod]
 *$py.class
+
+# invisible file on mac os
+.DS_Store
+
+# custom folder icon
+Icon?
