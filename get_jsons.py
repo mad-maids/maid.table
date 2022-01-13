@@ -14,6 +14,7 @@ from environs import Env
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import StaleElementReferenceException
+from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select, WebDriverWait
@@ -59,11 +60,16 @@ password_field.send_keys(Keys.ENTER)
 
 # group selection dropdown menu
 ignored_exceptions = (NoSuchElementException, StaleElementReferenceException)
-select = Select(
-    WebDriverWait(browser, 15, ignored_exceptions=ignored_exceptions).until(
-        expected_conditions.presence_of_element_located((By.ID, "ddlclass"))
+
+try:
+    select = Select(
+        WebDriverWait(browser, 15, ignored_exceptions=ignored_exceptions).until(
+            expected_conditions.presence_of_element_located((By.ID, "ddlclass"))
+        )
     )
-)
+except TimeoutException:
+    browser.quit()
+    raise SystemExit("No groups were found. No timetable available.")
 
 # this is just a list of all group names
 all_groups = [option.text for option in select.options]
@@ -93,8 +99,6 @@ for group in all_groups[2:]:
         "font-size:medium']",
     )
 
-    # i didnt really get why 7 has to be included since there arent 8 days in a
-    # week, but i included 7 anyway cause maybe its needed or sth
     days = {"0": [], "1": [], "2": [], "3": [], "4": [], "5": [], "6": [], "7":[]}
 
     for index, div in enumerate(divs):
@@ -190,4 +194,3 @@ for group in all_groups[2:]:
     time.sleep(random.uniform(2, 3))
 
 browser.quit()
-
