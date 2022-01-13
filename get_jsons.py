@@ -76,6 +76,10 @@ all_groups = [option.text for option in select.options]
 
 # the first 2 elements in all_groups array are an empty blank and '1 time'
 for group in all_groups[2:]:
+    # skip lyceum groups
+    if re.search(r"UzG|RuG", group, re.IGNORECASE):
+        continue
+
     # undergrad ends here i guess (also their time entries are a bit different)
     if group == "7MScBIA1":
         break
