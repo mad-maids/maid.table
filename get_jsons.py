@@ -71,19 +71,16 @@ except TimeoutException:
     browser.quit()
     raise SystemExit("No groups were found. No timetable available.")
 
-# this is just a list of all group names
-all_groups = [option.text for option in select.options]
+undergrad_course_re = r"\d(CIFS|BABM|BIS|CL|ECwF|Fin|BMFin|BMMar)\d+"
 
-# the first 2 elements in all_groups array are an empty blank and '1 time'
-for group in all_groups[2:]:
-    # skip lyceum groups
-    if re.search(r"UzG|RuG", group, re.IGNORECASE):
-        continue
+# this is just a list of all undergrad group names
+all_groups = [
+    option.text
+    for option in select.options
+    if re.search(undergrad_course_re, option.text, re.IGNORECASE)
+]
 
-    # undergrad ends here i guess (also their time entries are a bit different)
-    if group == "7MScBIA1":
-        break
-
+for group in all_groups:
     logging.info(f"Getting data for {group}")
 
     # element may change or may not be avaiable in the DOM, this handles these
