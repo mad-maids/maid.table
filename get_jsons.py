@@ -29,9 +29,9 @@ env.read_env()
 
 # Workflow is failing if the browser window is not maximized.
 chrome_options = Options()
-chrome_options.add_argument('--headless')
-chrome_options.add_argument('--no-sandbox')
-chrome_options.add_argument('--disable-dev-shm-usage')
+chrome_options.add_argument("--headless")
+chrome_options.add_argument("--no-sandbox")
+chrome_options.add_argument("--disable-dev-shm-usage")
 
 # these are saved in the .env file
 USER_ID = env.str("USER_ID")
@@ -100,7 +100,7 @@ for group in all_groups:
         "font-size:medium']",
     )
 
-    days = {"0": [], "1": [], "2": [], "3": [], "4": [], "5": [], "6": [], "7":[]}
+    days = {"0": [], "1": [], "2": [], "3": [], "4": [], "5": [], "6": [], "7": []}
 
     for index, div in enumerate(divs):
         # this represents a non-empty div (a box that has class info)
@@ -109,9 +109,21 @@ for group in all_groups:
             # are formatted the same for undergrad
             class_details = div.text.split("\n")
 
+            # removing the group names from this list so that it looks like:
+            # ['some location', 'module name_sem_blah_blah', 'teacher name']
+            class_details = [
+                detail
+                for detail in class_details
+                if not re.search(undergrad_course_re, detail, re.IGNORECASE)
+            ]
+
             # the following blocks deal with obtaining the info from the string
-            tutor = class_details[-1]
-            name = class_details[-2]
+            name = class_details[1]
+
+            try:
+                tutor = class_details[2]
+            except IndexError:
+                tutor = "Unknown"
 
             if "online" in name.lower():
                 name = name.split(" / ")[-1]
@@ -123,15 +135,15 @@ for group in all_groups:
             else:
                 class_type = "seminar"
 
-            location = class_details[-3]
+            location = class_details[0]
 
             if "(" in location:
                 kill_brackets_re = r"\(\d+\)"
                 brackets_match = re.search(kill_brackets_re, location)
-                
+
                 if brackets_match:
                     br_range = brackets_match.span()
-                    location = location[:br_range[0]] + location[br_range[1]:]
+                    location = location[: br_range[0]] + location[br_range[1] :]
                     # to get rid of duplicate whitespace
                     location = " ".join(location.split())
 
