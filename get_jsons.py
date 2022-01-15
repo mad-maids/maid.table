@@ -180,7 +180,11 @@ for group in all_groups:
 
             # sometimes the second hour of the lecture has the 'w' mark instead
             # of the 'lec' mark
-            edge_case = last_class.get("type") == "lecture" and class_type == "workshop"
+            edge_case = (
+                last_class.get("type") == "lecture"
+                and class_type == "workshop"
+                and last_class["length"] == 1
+            )
 
             if last_class and same_name and (same_type or edge_case):
                 last_class["length"] += 1.0
