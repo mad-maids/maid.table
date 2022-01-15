@@ -69,6 +69,72 @@ def check_module(dictionary):
         "Project Management",
         "Fundametals of Programming",
         "Exploring Economics",
+        "Business in the Modern World",
+        "Understanding Finance",
+        "Software Quality, Performance and Testing",
+        "Managing Innovation and Entrepreneurship",
+        "Sales Management",
+        "Information Systems Management",
+        "Web Applications Development",
+        "Concurrent Programming",
+        "Business Intelligence Systems",
+        "Computer Generated Imagery and Its Implementation",
+        "Internet Law",
+        "Islamic Finance",
+        "Audit and Assurance",
+        "Bank Risk Management",
+        "Global Financial Markets and Institutions",
+        "Securities Analysis",
+        "Financial Management",
+        "Principles and Practices of Taxation",
+        "Professional and Research Skills for Finance",
+        "Alternative Dispute Resolution",
+        "Principles of Marketing",
+        "Econometrics",
+        "Professional Practice Learning from Work",
+        "Retailing Business",
+        "Mooting and Advocacy",
+        "Civil Law",
+        "Tourism and Its Dynamics",
+        "Graphic design",
+        "Tort Law",
+        "Criminal Law",
+        "English for Academic Success (EAS)",
+        "Introduction to Banking and Financial Markets",
+        "Visual Programming",
+        "Foundations of Economics",
+        "Fundamentals of Commercial Law",
+        "Marketing Communications",
+        "Human Resource Management",
+        "Employment Law",
+        "Banking Law",
+        "Service Marketing",
+        "Supply Chain Management and Logistics",
+        "Leading Across Boundaries",
+        "Managing Brands",
+        "Marketing Strategy",
+        "Industrial Organisation",
+        "Corporate Crime",
+        "International Commercial Arbitration",
+        "Law of Finance",
+        "Competition Law",
+        "Corporate Governance",
+        "EU Trade Relations",
+        "Intellectual Property Law",
+        "Entertainment and Sports Law",
+        "Property Law",
+        "Economics of Financial Crises",
+        "Mathematics for Computing",
+        "Financial Mathematics and Principles",
+        "Introduction to Insurance Business",
+        "Public Finance",
+        "Intermediate Macroeconomics",
+        "Corporate Finance",
+        "Advanced Mathematics for Economists",
+        "Applied Policy Analysis",
+        "Behavioural Economics",
+        "International Economics",
+        "Health Economics",
     }
 
     days = list(dictionary.values())
@@ -79,9 +145,9 @@ def check_module(dictionary):
 
     # module_names = set()
     # for day in days:
-        # if day:
-            # for lesson in day:
-                # module_names.add(lesson["name"])
+    #   if day:
+    #       for lesson in day:
+    #           module_names.add(lesson["name"])
 
     if module_names.issubset(modules):
         return True
@@ -89,4 +155,3 @@ def check_module(dictionary):
         # get the modules that are in module_names but not in modules
         difference = module_names - modules
         return difference
-
