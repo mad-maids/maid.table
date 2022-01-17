@@ -7,6 +7,7 @@ import json
 import logging
 import random
 import re
+import shutil
 import time
 from pathlib import Path
 
@@ -70,6 +71,9 @@ try:
 except TimeoutException:
     browser.quit()
     raise SystemExit("No groups were found. No timetable available.")
+
+# delete old timetable data
+shutil.rmtree("./data/", ignore_errors=True)
 
 undergrad_course_re = r"\d(CIFS|BABM|BIS|CL|ECwF|Fin|BMFin|BMMar)\d+"
 
