@@ -10,6 +10,7 @@ jobs:
     name: "Tagged Release"
     runs-on: "ubuntu-latest"
     steps:
+      - uses: actions/checkout@v1
       - name: "Build & test"
         run: |
           ls -la
