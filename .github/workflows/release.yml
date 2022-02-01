@@ -1,9 +1,5 @@
 name: Release
 
-#on:
-#  schedule:
-#    - cron: "0 3 * * *"
-#  workflow_dispatch:
 on:
   push:
     tags:
@@ -19,7 +15,6 @@ jobs:
         run: |
           ls -la
           echo "done!"
-
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
