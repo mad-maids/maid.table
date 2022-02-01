@@ -1,9 +1,13 @@
 name: Release
 
+#on:
+#  schedule:
+#    - cron: "0 3 * * *"
+#  workflow_dispatch:
 on:
-  schedule:
-    - cron: "0 3 * * *"
-  workflow_dispatch:
+  push:
+    tags:
+      - "v*"
 
 jobs:
   tagged-release:
