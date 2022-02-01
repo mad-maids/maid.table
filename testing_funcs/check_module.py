@@ -135,6 +135,7 @@ def check_module(dictionary):
         "Behavioural Economics",
         "International Economics",
         "Health Economics",
+        "Operational Management of Insurance Business",
     }
 
     days = list(dictionary.values())
