@@ -42,4 +42,4 @@ jobs:
           [[ -z $(git status -uno --porcelain) ]] && echo "No updates detected, no need for push" && exit 0;
           git commit -m "Updated timetable"
           git push origin main --force
-          
+          zip -r timetable.zip data
