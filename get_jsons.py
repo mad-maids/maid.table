@@ -75,7 +75,7 @@ except TimeoutException:
 # delete old timetable data
 shutil.rmtree("./data/", ignore_errors=True)
 
-undergrad_course_re = r"\d(CIFS|BABM|BIS|CL|ECwF|Fin|BMFin|BMMar)\d+"
+undergrad_course_re = r"\d(CIFS|BABM|BIS|CL|ECwF|Fin|BMFin|BMMar)\d+|MScBIA"
 
 # this is just a list of all undergrad group names
 all_groups = [
@@ -198,7 +198,7 @@ for group in all_groups:
     group = group.upper()
 
     # obtaining the course name (e.g. 5BIS, 6ECwF, etc.)
-    course_regex = r"[3-6]\D+"
+    course_regex = r"[3-6]\D+|MSCBIA"
     course = re.search(course_regex, group)
     assert course is not None
     course = course.group()
