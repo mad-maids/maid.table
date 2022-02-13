@@ -136,6 +136,10 @@ def check_module(dictionary):
         "International Economics",
         "Health Economics",
         "Operational Management of Insurance Business",
+        "Data Warehousing and OLAP",
+        "Business Optimisation",
+        "Research Methods and Professional Practice",
+        "Big Data Theory and Practice",
     }
 
     days = list(dictionary.values())
