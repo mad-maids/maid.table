@@ -183,8 +183,6 @@ all_groups = [
 ]
 
 for group in all_groups:
-    if group != "MScBIA":
-        continue
     logging.info(f"Getting data for {group}")
 
     # element may change or may not be avaiable in the DOM, this handles these
