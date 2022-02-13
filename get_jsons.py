@@ -29,7 +29,7 @@ env.read_env()
 # -------------------- REGEX --------------------
 KILL_BRACKETS_RE = re.compile(r"\s?\(\s?\d+\s?\)")
 GROUP_RE = re.compile(
-    r"\d(CIFS|BABM|BIS|CL|ECwF|Fin|BMFin|BMMar)\d+|MScBIA|MAIBM 1",
+    r"\d(CIFS|BABM|BIS|CL|ECwF|Fin|BMFin|BMMar)\d+|MScBIA|(MAIBM 1)",
     re.IGNORECASE,
 )
 COURSE_RE = re.compile(r"[3-6]\D+|MSCBIA")
@@ -183,6 +183,9 @@ all_groups = [
 ]
 
 for group in all_groups:
+    if group == "MAIBM 1":
+        continue
+
     logging.info(f"Getting data for {group}")
 
     # element may change or may not be avaiable in the DOM, this handles these
@@ -229,7 +232,6 @@ for group in all_groups:
         classes_data = [data[i : i + 3] for i in range(0, len(data), 3)]
 
         for data in classes_data:
-            print(data)
             processed_data = process_class_data(data, index)
 
             # if theres a collision -> 2 or more classes in one time slot:
