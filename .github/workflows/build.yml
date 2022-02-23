@@ -56,6 +56,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+          ref: 'main'
       - name: Prepare zip file
         run: |
           zip --junk-paths -r timetable.zip data
